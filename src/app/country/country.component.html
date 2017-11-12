@@ -1,0 +1,32 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+
+
+    <div class="row">
+      <div class="cover-container">
+        <div class="col-md-12">
+          <h1>{{country.name}}</h1>
+        </div>
+        <hr>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="flag" class="col-md-6">
+        <img [src]="country.flag" width="350px">
+      </div>
+
+      <div id="description" class="col-md-6">
+        <p><b>Capital: </b>{{country.capital}}</p>
+        <p><b>Region: </b>{{country.region}}</p>
+        <p><b>Population: </b>{{country.population}}</p>
+        <p><b>Area: </b>{{country.area}} km<sup>2</sup></p>
+        <p><b>Currency: </b>{{currencies}}</p>
+        <p><b>Language: </b>{{languages}}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

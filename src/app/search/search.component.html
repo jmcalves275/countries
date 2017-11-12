@@ -1,0 +1,32 @@
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div>
+        <h1>Countries</h1>
+        <p class="lead">Find country information</p>
+
+        <form class="form-inline" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+
+          <div class="form-group mx-sm-3">
+            <input  auto-complete
+                    [formControlName]="'country'"
+                    [source]="countries"
+                    [list-formatter]="autocompleListFormatter"
+                    max-num-list="5"
+                    display-property-name="name"
+                    placeholder="Search"
+                    class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-secondary">Search</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
