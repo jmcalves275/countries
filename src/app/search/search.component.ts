@@ -12,21 +12,22 @@ import { PostsService } from '../posts.service';
 })
 export class SearchComponent implements OnInit {
   public countries = [];
-  isValid = false;
+  isValid = true;
   public myForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private posts: PostsService, private _sanitizer: DomSanitizer, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => console.log('teste'));
-
+    this.myForm = new FormGroup({
+      'country': new FormControl(null, Validators.required),
+    })
     this.posts.getListCountries().subscribe((data) => {
       this.countries = data;
-      this.isValid = true;
+      this.isValid = null;
     })
-    this.myForm = new FormGroup({
-      'country': new FormControl({value: null, disabled: this.isValid}, Validators.required),
-    })
+
+
   }
 
 

@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
     "test": "ng test",
+    "preinstall": "npm install -g angular-cli",
+    "postinstall": "ng build --aot -prod",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
